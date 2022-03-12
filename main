@@ -1,0 +1,60 @@
+package aula1.exercicio1;
+
+/**
+ *
+ * @author User
+ */
+public class Main {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        String opt = 
+        Pessoa p = null;
+        String nome, cpf;
+        char sexo;
+        int idade;
+       
+        while(!opt.equals("3")) {
+            opt = JOptionPane.showInputDialog("1 - criar pessoa\n2 2 - mostrar pessoa\n2 ")
+        }
+        
+    }
+    switch (opt) {
+        
+        case "1":
+            cpf = JOptionPage.showInputDialog("CPF:");
+            nome = JOptionPage.showInputDialog("Nome:");
+            sexo = JOptionPage.showInputDialog("Sexo:");
+            idade = JOptionPage.showInputDialog("Idade:");
+            
+            p = new Pessoa();
+            p.setCpf(cpf);
+            p.setNome(nome);
+            p.setSexo(sexo);
+            p.setIdade(idade);
+            break;
+            
+            
+        case "2":
+            if (p != null) {
+                JOptionPane.showMessageDialog(null, p.imprimir());
+            } else {
+                JOptionPane.showMessageDialog(null, 
+                        "voc precisa cadastrar a pessoa antes", 
+                        "cuidado...",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+            
+            break;
+            
+        default:
+            JOptionPane.showMessageDialog(null, 
+                    "opcao invalida", 
+                    "opa... deu errado",
+                    JOptionPane.ERROR_MESSAGE);
+            break;
+    }
+    
+}
